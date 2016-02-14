@@ -1,0 +1,611 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cccccc"
+    tools:context="com.example.todo.MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4caf50"
+        
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TODO"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+        
+        
+    </LinearLayout>
+    
+    
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:divider="#00000000"
+        android:dividerHeight="5.0sp"
+        android:visibility="visible" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/popup"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="6" >
+
+            <LinearLayout
+                android:id="@+id/popHeader"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="3" >
+
+                <LinearLayout
+                    android:id="@+id/popup12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup22"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:background="#4caf50"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add a ToDo task"
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup32"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/popContent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="horizontal"
+                android:weightSum="3" >
+
+                <LinearLayout
+                    android:id="@+id/popup1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:weightSum="6" >
+
+                    <LinearLayout
+                        android:id="@+id/inner1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner11"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Location"
+                                android:textColor="#4caf40" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner12"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/locationEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner21"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:textColor="#4caf40" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner22"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/timeEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Click to add a reminder time"
+                                android:textColor="#acacac" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="4.5"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner31"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l31"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ToDo"
+                                android:textColor="#4caf40" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner32"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@drawable/shape"
+                            android:orientation="horizontal" >
+
+                            <EditText
+                                android:id="@+id/noteEt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="Add a todo task here !"
+                                android:inputType="textCapSentences|textMultiLine"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner41"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/l41"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/buttonborder"
+                                android:text="discard"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner42"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/l42"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/buttonborder"
+                                android:text="add"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/popupDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:weightSum="6" >
+
+            <LinearLayout
+                android:id="@+id/popHeaderDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="3" >
+
+                <LinearLayout
+                    android:id="@+id/popup12Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup22Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:background="#4caf50"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ToDo task"
+                        android:textColor="#fff"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup32Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/popContentDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="horizontal"
+                android:weightSum="3" >
+
+                <LinearLayout
+                    android:id="@+id/popup1Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup2Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:background="#ffffff"
+                    android:orientation="vertical"
+                    android:weightSum="6" >
+
+                    <LinearLayout
+                        android:id="@+id/inner1Display"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight=".5"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner11Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l1Display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Location"
+                                android:textColor="#4caf50" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner12Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/locationEtDisplay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner2Display"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner21Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l2Display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:textColor="#4caf50" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner22Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/timeEtDisplay"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner3Display"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="4.5"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner31Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/l31Display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ToDo"
+                                android:textColor="#4caf50" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/inner32Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:background="@drawable/shape"
+                            android:orientation="horizontal" >
+
+                            <ScrollView
+                                android:id="@+id/scroll"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/noteEtDisplay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#333333"
+                                    android:textSize="15sp" />
+                            </ScrollView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/inner4Display"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="3" >
+
+                        <LinearLayout
+                            android:id="@+id/inner41Display"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+
+                            <Button
+                                android:id="@+id/l41Display"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttonborder"
+                                android:text="back"
+                                android:textColor="#fff" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popup3Display"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:background="#fff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="6" >
+
+            <TimePicker
+                android:id="@+id/timePicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="2.5" />
+
+            <DatePicker
+                android:id="@+id/datePicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="3" />
+
+            <Button
+                android:id="@+id/pick"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_weight=".2"
+                android:background="@drawable/buttonborder"
+                android:text="Pick"
+                android:textColor="#fff" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/plusgreen" />
+
+</RelativeLayout>
